@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Task;
 use App\Models\Tracking;
-use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {

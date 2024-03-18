@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use App\Scopes\UserTrackingScope;
-use Carbon\Carbon;
-use Carbon\CarbonInterval;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

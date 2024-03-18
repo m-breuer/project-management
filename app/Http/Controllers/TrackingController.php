@@ -7,15 +7,11 @@ use App\Http\Requests\TrackingUpdateRequest;
 use App\Models\Project;
 use App\Models\Task;
 use App\Models\Tracking;
-use Illuminate\Http\Request;
 
 class TrackingController extends Controller
 {
     /**
      * Start tracking the specified resource.
-     * @param TrackingStoreRequest $request
-     * @param Project $project
-     * @param Task $task
      */
     public function start(TrackingStoreRequest $request, Project $project, Task $task, Tracking $tracking)
     {
@@ -26,10 +22,6 @@ class TrackingController extends Controller
 
     /**
      * Stop tracking the specified resource.
-     * @param TrackingUpdateRequest $request
-     * @param Project $project
-     * @param Task $task
-     * @param Tracking $tracking
      */
     public function stop(TrackingUpdateRequest $request, Project $project, Task $task, Tracking $tracking)
     {

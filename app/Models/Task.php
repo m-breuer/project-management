@@ -150,7 +150,8 @@ class Task extends Model
     /**
      * Scope a query to only include open tasks from the current user.
      */
-    public function scopeOpenTasks($query) {
+    public function scopeOpenTasks($query)
+    {
         return $query->where('status', '!=', TaskStatusEnum::Done)->where('status', '!=', TaskStatusEnum::Cancelled);
     }
 
@@ -165,7 +166,8 @@ class Task extends Model
     /**
      * Scope a query to only include open tasks from the current user.
      */
-    public function scopeFinishedTasksFromCurrentUser($query) {
+    public function scopeFinishedTasksFromCurrentUser($query)
+    {
         return $query->where('status', '=', TaskStatusEnum::Done)->orWhere('status', '=', TaskStatusEnum::Cancelled)->where('assigned_user_id', auth()->user()->id);
     }
 }

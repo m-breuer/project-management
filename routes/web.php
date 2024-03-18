@@ -5,7 +5,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TrackingController;
-
 use Illuminate\Support\Facades\Route;
 
 Auth::routes([
@@ -15,7 +14,6 @@ Auth::routes([
 ]);
 
 Route::middleware(['auth'])->group(function () {
-
 
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 

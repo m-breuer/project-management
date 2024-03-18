@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Project;
-use App\Models\Customer;
 use App\Http\Requests\ProjectStoreRequest;
 use App\Http\Requests\ProjectUpdateRequest;
+use App\Models\Customer;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -40,8 +39,6 @@ class ProjectController extends Controller
 
     /**
      * Store a newly created project in storage.
-     *
-     * @param \App\Http\Requests\ProjectStoreRequest $request
      */
     public function store(ProjectStoreRequest $request)
     {
@@ -52,8 +49,6 @@ class ProjectController extends Controller
 
     /**
      * Display the specified project.
-     *
-     * @param \App\Models\Project $project
      */
     public function show(Project $project)
     {
@@ -62,8 +57,6 @@ class ProjectController extends Controller
 
     /**
      * Show the form for editing the specified project.
-     *
-     * @param \App\Models\Project $project
      */
     public function edit(Project $project)
     {
@@ -74,9 +67,6 @@ class ProjectController extends Controller
 
     /**
      * Update the specified project in storage.
-     *
-     * @param \App\Http\Requests\ProjectUpdateRequest $request
-     * @param \App\Models\Project $project
      */
     public function update(ProjectUpdateRequest $request, Project $project)
     {
@@ -87,8 +77,6 @@ class ProjectController extends Controller
 
     /**
      * Remove the specified project from storage.
-     *
-     * @param \App\Models\Project $project
      */
     public function destroy(Project $project)
     {
@@ -96,5 +84,4 @@ class ProjectController extends Controller
 
         return redirect()->route('project.index')->with('success', 'Project deleted successfully.');
     }
-
 }

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CustomerStoreRequest;
-use App\Models\Customer;
 use App\Enums\CustomerSalutationEnum;
+use App\Http\Requests\CustomerStoreRequest;
 use App\Http\Requests\CustomerUpdateRequest;
-use Illuminate\Http\Request;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -35,7 +34,6 @@ class CustomerController extends Controller
     /**
      * Store a newly created customer in storage.
      *
-     * @param \App\Http\Requests\CustomerStoreRequest $request
      * @return \Illuminate\Http\Response
      */
     public function store(CustomerStoreRequest $request)
@@ -48,7 +46,6 @@ class CustomerController extends Controller
     /**
      * Display the specified customer.
      *
-     * @param \App\Models\Customer $customer
      * @return \Illuminate\Http\Response
      */
     public function show(Customer $customer)
@@ -59,7 +56,6 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified customer.
      *
-     * @param \App\Models\Customer $customer
      * @return \Illuminate\Http\Response
      */
     public function edit(Customer $customer)
@@ -70,8 +66,6 @@ class CustomerController extends Controller
     /**
      * Update the specified customer in storage.
      *
-     * @param \App\Http\Requests\CustomerUpdateRequest $request
-     * @param \App\Models\Customer $customer
      * @return \Illuminate\Http\Response
      */
     public function update(CustomerUpdateRequest $request, Customer $customer)
@@ -84,7 +78,6 @@ class CustomerController extends Controller
     /**
      * Remove the specified customer from storage.
      *
-     * @param \App\Models\Customer $customer
      * @return \Illuminate\Http\Response
      */
     public function destroy(Customer $customer)

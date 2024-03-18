@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
@@ -16,14 +15,14 @@ class UserSeeder extends Seeder
             'name' => 'Marcel',
             'email' => 'info@marcel-breuer.eu',
             'password' => bcrypt('password'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
         ]);
 
         \App\Models\User::create([
             'name' => 'Test',
             'email' => 'test@test.de',
             'password' => bcrypt('password'),
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
         ]);
     }
 }

@@ -8,13 +8,11 @@ use App\Http\Requests\TaskUpdateRequest;
 use App\Models\Project;
 use App\Models\Task;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @param Project $project
      */
     public function create(Project $project)
     {
@@ -26,8 +24,6 @@ class TaskController extends Controller
 
     /**
      * Store a newly created resource in storage.
-     * @param TaskStoreRequest $request
-     * @param Project $project
      */
     public function store(TaskStoreRequest $request, Project $project, Task $task)
     {
@@ -38,8 +34,6 @@ class TaskController extends Controller
 
     /**
      * Show the form for editing the specified resource.
-     * @param Project $project
-     * @param Task $task
      */
     public function edit(Project $project, Task $task)
     {
@@ -51,9 +45,6 @@ class TaskController extends Controller
 
     /**
      * Update the specified resource in storage.
-     * @param TaskUpdateRequest $request
-     * @param Project $project
-     * @param Task $task
      */
     public function update(TaskUpdateRequest $request, Project $project, Task $task)
     {
@@ -64,8 +55,6 @@ class TaskController extends Controller
 
     /**
      * Remove the specified resource from storage.
-     * @param Project $project
-     * @param Task $task
      */
     public function destroy(Project $project, Task $task)
     {

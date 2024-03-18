@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\CustomerSalutationEnum;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
-use App\Enums\CustomerSalutationEnum;
 
 class CustomerStoreRequest extends FormRequest
 {
