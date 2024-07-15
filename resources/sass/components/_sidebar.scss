@@ -1,0 +1,28 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 3rem 0 0;
+    box-shadow: inset -1px 0 0 var(--bs-gray-400);
+}
+
+@media all and (max-width: 768px) {
+    .sidebar {
+        top: 5rem;
+    }
+}
+
+.sidebar .nav-link {
+    color: var(--bs-dark);
+}
+
+.sidebar .sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+#bm__toolbar {
+    right: 1.5rem;
+}
