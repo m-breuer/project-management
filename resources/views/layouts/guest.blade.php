@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" translate="no">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,27 +11,18 @@
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
+
 <body>
+    <div class="container-fluid">
+        <div class="d-flex align-items-center" id="pm__toolbar">
+            @yield('heading')
+        </div>
 
-@include('components.navbar')
-
-<div class="container-fluid">
-    <div class="row">
-        @include('components.sidebar')
-
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 my-sm-3 my-2 position-relative" id="pm__main">
-            <div class="d-flex align-items-center" id="pm__toolbar">
-                @yield("heading")
-            </div>
-
-            <hr/>
-
-            @include("components.status")
-
+        @include('components.status')
+        <main class="vh-100 d-flex align-items-center flex-row" id="pm__main">
             @yield('content')
         </main>
     </div>
-</div>
-
 </body>
+
 </html>
