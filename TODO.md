@@ -1,7 +1,5 @@
 # Project Management 
 
-- [ ] create starting page
-- [ ] use fe-modules instead of own custom styles
 - [ ] user
   - [ ] add user
   - [ ] edit user

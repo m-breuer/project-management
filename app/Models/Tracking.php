@@ -66,4 +66,12 @@ class Tracking extends Model
     {
         return $this->start_at->diffInSeconds($this->end_at);
     }
+
+    /*+
+    * Get open trackings for the current user.
+    */
+    public static function scopeOpenTrackings($query)
+    {
+        return $query->whereNull('end_at');
+    }
 }

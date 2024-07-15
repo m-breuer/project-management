@@ -12,7 +12,7 @@ class TaskSeeder extends Seeder
     public function run(): void
     {
         \App\Models\Task::factory()
-            ->count(5000)
+            ->count(150)
             ->create();
     }
 }
