@@ -25,7 +25,7 @@ class CustomerUpdateRequest extends FormRequest
     {
         return [
             'salutation' => ['nullable', 'integer', new Enum(CustomerSalutationEnum::class)],
-            'first_name' => ['nullable', 'string', 'max:255'],
+            'first_name' => ['nullable', 'string', 'max:255', 'min:1'],
             'last_name' => ['nullable', 'string', 'max:255'],
             'company_name' => ['required', 'string', 'max:255'],
             'tax_number' => ['nullable', 'string', 'max:255'],
@@ -33,7 +33,7 @@ class CustomerUpdateRequest extends FormRequest
             'location' => ['nullable', 'string', 'max:255'],
             'country' => ['nullable', 'string', 'max:255'],
             'mobile_number' => ['nullable', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:customers,email,'.$this->customer->id],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:customers,email,' . $this->customer->id],
         ];
     }
 }
