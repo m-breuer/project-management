@@ -12,8 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropForeign(['project_id']);
-            $table->foreignUuid('project_id')->references('id')->on('projects')->onDelete('cascade');
+            if (!Schema::hasColumn('tasks', 'project_id')) {
+                $table->foreignUuid('project_id')->references('id')->on('projects')->onDelete('cascade');
+            } else {
+                $table->dropForeign(['project_id']);
+                $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            }
         });
     }
 
