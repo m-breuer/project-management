@@ -33,6 +33,15 @@
                 <div class="card-body">
                     @forelse($openTrackings as $tracking)
                         <p>{{ $tracking->task->name }}</p>
+
+                        <form class="d-inline"
+                            action="{{ route('projects.tasks.trackings.stop', [$tracking->task->project, $tracking->task, $tracking]) }}"
+                            method="POST">
+                            @method('PATCH')
+                            @csrf
+
+                            <button class="btn btn-dark" type="submit">{{ __('Stop') }}</button>
+                        </form>
                     @empty
                         <div class="alert alert-success" role="alert">
                             {{ __('Start new tracking.') }}

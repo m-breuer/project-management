@@ -31,7 +31,7 @@ class ProjectController extends Controller
         $customers = Customer::all();
 
         if ($customers->isEmpty()) {
-            return redirect()->route('customer.create')->with('warning', 'You need to create a customer first.');
+            return redirect()->route('customers.create')->with('warning', 'You need to create a customer first.');
         }
 
         return view('projects.create', compact('customers'));
@@ -44,7 +44,7 @@ class ProjectController extends Controller
     {
         $project = Project::create($request->validated());
 
-        return redirect()->route('project.index')->with('success', 'Project created successfully.');
+        return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
 
     /**
@@ -72,7 +72,7 @@ class ProjectController extends Controller
     {
         $project->update($request->validated());
 
-        return redirect()->route('project.index')->with('success', 'Project updated successfully.');
+        return redirect()->route('projects.index')->with('success', 'Project updated successfully.');
     }
 
     /**
@@ -82,6 +82,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('project.index')->with('success', 'Project deleted successfully.');
+        return redirect()->route('projects.index')->with('success', 'Project deleted successfully.');
     }
 }

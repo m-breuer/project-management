@@ -29,7 +29,7 @@ class TaskController extends Controller
     {
         $task->create($request->validated());
 
-        return redirect()->route('project.show', $project)->with('success', 'Task created successfully');
+        return redirect()->route('projects.show', $project)->with('success', 'Task created successfully');
     }
 
     /**
@@ -50,7 +50,7 @@ class TaskController extends Controller
     {
         $task->update($request->validated());
 
-        return redirect()->route('project.show', $project)->with('success', 'Task updated successfully');
+        return redirect()->route('projects.show', $project)->with('success', 'Task updated successfully');
     }
 
     /**
@@ -60,6 +60,6 @@ class TaskController extends Controller
     {
         $task->delete();
 
-        return redirect()->route('project.show', $project)->with('success', 'Task deleted successfully');
+        return redirect()->route('projects.show', $project)->with('success', 'Task deleted successfully');
     }
 }
