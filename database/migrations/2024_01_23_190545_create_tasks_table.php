@@ -19,9 +19,9 @@ return new class extends Migration
             $table->timestamp('deadline')->nullable();
             $table->double('estimated_hours', 8, 2)->nullable();
 
-            $table->foreignUuid('project_id')->references('id')->on('projects');
-            $table->foreignId('created_user_id')->references('id')->on('users');
-            $table->foreignId('assigned_user_id')->nullable()->references('id')->on('users');
+            $table->foreignUuid('project_id')->references('id')->on('projects')->cascadeOnDelete();
+            $table->foreignId('created_user_id')->references('id')->on('users')->nullOnDelete();
+            $table->foreignId('assigned_user_id')->nullable()->references('id')->on('users')->nullOnDelete();
         });
     }
 

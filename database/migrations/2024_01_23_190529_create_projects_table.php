@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('description')->nullable();
 
-            $table->foreignUuid('customer_id')->references('id')->on('customers');
+            $table->foreignUuid('customer_id')->references('id')->on('customers')->cascadeOnDelete();
         });
     }
 

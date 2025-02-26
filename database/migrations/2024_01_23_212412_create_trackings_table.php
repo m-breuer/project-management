@@ -17,8 +17,8 @@ return new class extends Migration
             $table->timestamp('start_at');
             $table->timestamp('end_at')->nullable();
 
-            $table->foreignUuid('task_id')->constrained()->onDelete('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignUuid('task_id')->constrained()->nullOnDelete();
+            $table->foreignId('user_id')->constrained()->nullOnDelete();
         });
     }
 

@@ -40,7 +40,7 @@ class CustomerController extends Controller
     {
         $customer = Customer::create($request->validated());
 
-        return redirect()->route('customer.index')->with('success', 'Customer created successfully.');
+        return redirect()->route('customers.index')->with('success', 'Customer created successfully.');
     }
 
     /**
@@ -50,6 +50,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
+        redirect()->route('customers.index'); // todo customers show does not exist
         return view('customers.show', compact('customer'));
     }
 
@@ -72,7 +73,7 @@ class CustomerController extends Controller
     {
         $customer->update($request->validated());
 
-        return redirect()->route('customer.index')->with('success', 'Customer updated successfully.');
+        return redirect()->route('customers.index')->with('success', 'Customer updated successfully.');
     }
 
     /**
@@ -84,6 +85,6 @@ class CustomerController extends Controller
     {
         $customer->delete();
 
-        return redirect()->route('customer.index')->with('success', 'Customer deleted successfully.');
+        return redirect()->route('customers.index')->with('success', 'Customer deleted successfully.');
     }
 }

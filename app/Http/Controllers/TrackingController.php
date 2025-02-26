@@ -17,7 +17,7 @@ class TrackingController extends Controller
     {
         $tracking->create($request->validated());
 
-        return redirect()->route('project.show', $project)->with('success', 'Tracking started successfully.');
+        return redirect()->back()->with('success', 'Tracking started successfully.');
     }
 
     /**
@@ -27,6 +27,6 @@ class TrackingController extends Controller
     {
         $tracking->update($request->validated());
 
-        return redirect()->route('project.show', $project)->with('success', 'Tracking stopped successfully.');
+        return redirect()->back()->with('success', 'Tracking stopped successfully.');
     }
 }
