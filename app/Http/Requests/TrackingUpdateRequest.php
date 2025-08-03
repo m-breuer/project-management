@@ -39,7 +39,7 @@ class TrackingUpdateRequest extends FormRequest
             'project_id' => ['required', 'exists:projects,id'],
             'task_id' => ['required', 'exists:tasks,id'],
             'user_id' => ['required', 'exists:users,id'],
-            'end_at' => ['required', new Timestamp()],
+            'end_at' => ['required', new Timestamp],
         ];
     }
 }

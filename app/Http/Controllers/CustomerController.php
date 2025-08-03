@@ -51,6 +51,7 @@ class CustomerController extends Controller
     public function show(Customer $customer)
     {
         redirect()->route('customers.index'); // todo customers show does not exist
+
         return view('customers.show', compact('customer'));
     }
 

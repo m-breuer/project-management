@@ -56,7 +56,7 @@ class Tracking extends Model
     {
         parent::boot();
 
-        static::addGlobalScope(new UserTrackingScope());
+        static::addGlobalScope(new UserTrackingScope);
     }
 
     /**
